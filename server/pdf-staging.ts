@@ -46,7 +46,10 @@ export async function stagePdfAttachments(files: readonly PdfSourceFile[], stage
 async function inspectPdfPage(name: string, pageNumber: number, stage: string) {
   const page = String(pageNumber);
   const prefix = `${path.parse(name).name}-page-${page}`;
-  const info = await runPdfProcess(process.env['SOLUTION_LAB_PDFINFO'] || 'pdfinfo',
+  const poppler = process.env['SOLUTION_LAB_PDFTOPPM'] || 'pdftoppm';
+  // The Windows launcher already locates pdftoppm; pdfinfo is installed next to it.
+  const bundledInfo = path.isAbsolute(poppler) ? path.join(path.dirname(poppler), `pdfinfo${path.extname(poppler)}`) : 'pdfinfo';
+  const info = await runPdfProcess(process.env['SOLUTION_LAB_PDFINFO'] || bundledInfo,
     ['-f', page, '-l', page, '-box', name], stage, 30_000);
   const box = /^Page\s+\d+\s+CropBox:\s+(-?[\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)\s+(-?[\d.]+)/mu.exec(info.stdout);
   const rotation = /^Page\s+\d+\s+rot:\s+(\d+)/mu.exec(info.stdout)?.[1];
@@ -54,7 +57,7 @@ async function inspectPdfPage(name: string, pageNumber: number, stage: string) {
   const width = Number(box[3]) - Number(box[1]);
   const height = Number(box[4]) - Number(box[2]);
   if (!(width > 0 && height > 0) || Math.max(width, height) > 1500) return null;
-  await runPdfProcess(process.env['SOLUTION_LAB_PDFTOPPM'] || 'pdftoppm',
+  await runPdfProcess(poppler,
     ['-f', page, '-l', page, '-singlefile', '-r', '144', '-cropbox', '-png', name, prefix], stage, 45_000);
   return { raster: path.join(stage, `${prefix}.png`), width, height };
 }
