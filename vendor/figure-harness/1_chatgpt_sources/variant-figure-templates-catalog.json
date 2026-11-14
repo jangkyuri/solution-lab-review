@@ -1,0 +1,320 @@
+{
+  "schema_version": "figure_template_catalog_v1",
+  "recipe_schema_version": "figure_recipe_v1",
+  "title": "정본 기반 도형·그래프 실행 템플릿",
+  "template_count": 16,
+  "path_bases": {
+    "example": "이 catalog.json이 있는 디렉터리",
+    "source.source_relative_path": "원본 PDF 모음 루트",
+    "source.crop_path": "output/official-visual-atlas (작업공간 기준)",
+    "source_metadata": "output/official-visual-atlas/atlas.json (작업공간 기준)"
+  },
+  "provenance_note": "출처는 표현·구조의 참조다. 템플릿은 제한된 수학적 구성만 지원하며 원문 전체의 수치·문항·정답 또는 픽셀 복원을 뜻하지 않는다. 학습 가중치가 아니라 ChatGPT의 명시적 입력과 고정 렌더러로 재사용한다.",
+  "annotation_policy": "실행 입력의 visible_annotations에 명시한 글자만 표시한다. 숨은 작도 매개변수는 공개 라벨을 허가하지 않는다.",
+  "templates": [
+    {
+      "id": "polynomial_region",
+      "title": "포물선·할선·음영",
+      "source_id": "S002-P11-F01",
+      "scope": "위로 열린 포물선과 두 교점의 할선, x축까지의 지정 구간 음영",
+      "example": "examples/polynomial_region.json",
+      "reference_note": "포물선·할선·음영의 표현을 옮겼다. 음영은 지정 구간에서 포물선과 x축 사이이며, 원문의 두 삼각형 넓이를 그대로 재현한 것은 아니다.",
+      "example_sha256": "12724afb874c7d42d1ae383bc2a0fa7372d3e08a9759f5d046995819ece96387",
+      "source": {
+        "source_filename": "2020년-고1-6월-학평부산-수학-문제.pdf",
+        "source_relative_path": "고1/2020/06월/2020년-고1-6월-학평부산-수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2020년-고1-6월-학평부산-수학-문제.pdf",
+        "page": 11,
+        "question_label": "27번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S002-P11-F01.png",
+        "crop_sha256": "50c1217b74ddb73dc3a7e2f905f8cb5397860b1810602ece3f129b56662fe4c5"
+      }
+    },
+    {
+      "id": "quadratic_line_enclosed_region",
+      "title": "포물선·직선 사이 영역",
+      "source_id": "S010-P08-F01",
+      "scope": "두 교점에서 만나는 이차함수와 직선; 명시한 경우에만 사이 영역 음영",
+      "example": "examples/quadratic_line_enclosed_region.json",
+      "reference_note": "S010-P08-F01은 이차함수와 직선의 교차 형태, S082-P05-F01은 회색 영역의 부분 스타일 근거다. 예제의 수치와 음영은 새 입력이며 두 원문 그림을 복원했다는 뜻이 아니다.",
+      "example_sha256": "1bcbf4cc2395c41a4e9e841b07d9b21faf8b98753f1e312b6abdf73e825efb25",
+      "source": {
+        "source_filename": "2022년-고1-6월-모의고사-수학-문제.pdf",
+        "source_relative_path": "고1/2022/06월/2022년-고1-6월-모의고사-수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2022년-고1-6월-모의고사-수학-문제.pdf",
+        "page": 8,
+        "question_label": "19번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S010-P08-F01.png",
+        "crop_sha256": "07572ad670a000a17a4a66034c0faf7e669a07951e6d25f828c0e9f76b242efc"
+      }
+    },
+    {
+      "id": "piecewise_endpoints",
+      "title": "구간별 함수·열린 점",
+      "source_id": "S030-P02-F01",
+      "scope": "직선·상수·포물선의 세 구간과 명시적인 열린 점·채운 점",
+      "example": "examples/piecewise_endpoints.json",
+      "reference_note": "서로 다른 세 함수 구간과 열린 점·채운 점을 분리한다. 원문 계수와 값 전체를 복원하는 예제가 아니라 끝점 표현을 재사용하는 예제다.",
+      "example_sha256": "ce5f1949133f82d0eeb75612fe3a687e64419499f4f57e079b92bc1dee3d8929",
+      "source": {
+        "source_filename": "2020년-고2-9월-학평인천-수학-문제.pdf",
+        "source_relative_path": "고2/2020/09월/2020년-고2-9월-학평인천-수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2020년-고2-9월-학평인천-수학-문제.pdf",
+        "page": 2,
+        "question_label": "5번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S030-P02-F01.png",
+        "crop_sha256": "485e1a200d55492ff16cea355ef47d04a46b84cfb2314b0558d99c9565c06fe7"
+      }
+    },
+    {
+      "id": "trig_guides",
+      "title": "삼각함수·점선 보조선",
+      "source_id": "S029-P03-F01",
+      "scope": "사인 함수의 진폭·주기·평행이동과 선택적 보조선",
+      "example": "examples/trig_guides.json",
+      "reference_note": "사인 함수의 진폭·주기·평행이동과 점선 보조선을 바꾼다. 원문의 특정 수치 조건을 추정해 자동 표기하지 않는다.",
+      "example_sha256": "c7f4b5183b9f92ce1b2839605db52e4de1db5b3d355d6a55be0d4b4289966828",
+      "source": {
+        "source_filename": "2020년-고2-6월-학평부산-수학-문제.pdf",
+        "source_relative_path": "고2/2020/06월/2020년-고2-6월-학평부산-수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2020년-고2-6월-학평부산-수학-문제.pdf",
+        "page": 3,
+        "question_label": "10번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S029-P03-F01.png",
+        "crop_sha256": "54bdbb3e7d44a2dcd94fbaea6c730078cf2b0cc366cefe7697cc483c8b897dfc"
+      }
+    },
+    {
+      "id": "piecewise_density",
+      "title": "구간별 확률밀도함수",
+      "source_id": "S072-P12-F02",
+      "scope": "주어진 꼭짓점을 이은 비음수 꺾은선, 총넓이 1 검증",
+      "example": "examples/piecewise_density.json",
+      "reference_note": "꼭짓점을 잇는 비음수 밀도함수다. 각 예제는 넓이 1을 검사하며, 넓이가 다른 입력을 몰래 정규화하지 않는다.",
+      "example_sha256": "07e7f0c96c34b0daef05c73d77bcaee76a50b17f44608562918240661471c3b2",
+      "source": {
+        "source_filename": "2023년-고3-7월-모의고사-수학-문제.pdf",
+        "source_relative_path": "고3/2023/07월/2023년-고3-7월-모의고사-수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2023년-고3-7월-모의고사-수학-문제.pdf",
+        "page": 12,
+        "question_label": "확률과 통계 29번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S072-P12-F02.png",
+        "crop_sha256": "7f02e3a88317bc5835654fd9d9b04e9c7ff2d0979671411980db91e7d89c3d05"
+      }
+    },
+    {
+      "id": "hyperbola_foci",
+      "title": "쌍곡선·초점",
+      "source_id": "S055-P18-F01",
+      "scope": "수평축 쌍곡선의 두 분리된 가지와 정확한 초점",
+      "example": "examples/hyperbola_foci.json",
+      "reference_note": "두 가지를 분리해 그리고 초점 좌표를 계산한다. 예제의 두 반축·지정점은 시연 입력이며 원문의 수치 복원과 구별한다.",
+      "example_sha256": "bddc08492b76a738f56c884def0d2cd23fc63ef5f8638f38e878269a8c2c1a56",
+      "source": {
+        "source_filename": "2021학년도-3월-고3-모의고사-수학-문제.pdf",
+        "source_relative_path": "고3/2021/03월/2021학년도-3월-고3-모의고사-수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2021학년도-3월-고3-모의고사-수학-문제.pdf",
+        "page": 18,
+        "question_label": "기하 26번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S055-P18-F01.png",
+        "crop_sha256": "7e3d1d092b5da4e04d007099e23c7ad19969c33bfbfafe41e64e9c3ee3f56a93"
+      }
+    },
+    {
+      "id": "circle_tangent_chords",
+      "title": "원·접선·현",
+      "source_id": "S054-P08-F02",
+      "scope": "BC=CD인 내접사각형 ABCD와 C에서의 접선 EF",
+      "example": "examples/circle_tangent_chords.json",
+      "reference_note": "같은 현 BC와 CD, C에서의 접선, 두 연장선의 교점을 유지한다. 원문의 반지름·비·각도 수치 전체를 재현했다고 주장하지 않는다.",
+      "example_sha256": "cdf1df40e094cb7d6585f631d5ac5c85d43f4a430a2680b9ab2d38dd98ad6cfc",
+      "source": {
+        "source_filename": "2026년-9월-고2-모의고사-수학-문제.pdf",
+        "source_relative_path": "고2/2026/09월/2026년-9월-고2-모의고사-수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2026년-9월-고2-모의고사-수학-문제.pdf",
+        "page": 8,
+        "question_label": "20번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S054-P08-F02.png",
+        "crop_sha256": "f272c080a542a5cfcf74238a670d306d3665ebf1e3b306fd168dc83f5c41ff41"
+      }
+    },
+    {
+      "id": "triangle_equal_segments",
+      "title": "정삼각형·변 위의 점",
+      "source_id": "S031-P09-F01",
+      "scope": "AP+BQ+CR=AB 및 PQ=PR을 보존하는 정삼각형 내부 구성",
+      "example": "examples/triangle_equal_segments.json",
+      "reference_note": "정삼각형에서 AP+BQ+CR=AB와 PQ=PR을 보존한다. 같은 길이 표시는 요청한 예제에만 표시한다.",
+      "example_sha256": "415261618982e1a00a39a95231a96aee7e1947056eec6e53db979c881edf6d04",
+      "source": {
+        "source_filename": "2020년-고2-11월-모의고사-수학-문제.pdf",
+        "source_relative_path": "고2/2020/11월/2020년-고2-11월-모의고사-수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2020년-고2-11월-모의고사-수학-문제.pdf",
+        "page": 9,
+        "question_label": "21번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S031-P09-F01.png",
+        "crop_sha256": "2de9f326e19df900b38eb0e3333cdd64d3553f900545c188c8533c43de3fb060"
+      }
+    },
+    {
+      "id": "circular_seating",
+      "title": "원형 좌석 배치",
+      "source_id": "S055-P10-F01",
+      "scope": "원형 탁자 주위의 등간격 좌석과 좌석 겹침 검증",
+      "example": "examples/circular_seating.json",
+      "reference_note": "좌석을 같은 각도 간격으로 배치하고 겹침을 검사한다. 좌석 수·크기·회전·채움을 바꾸며 숫자나 이름은 자동으로 넣지 않는다.",
+      "example_sha256": "a024c7a0524b86d92344b40215189d61a414da29f6057dbc7f79ea12ccb57001",
+      "source": {
+        "source_filename": "2021학년도-3월-고3-모의고사-수학-문제.pdf",
+        "source_relative_path": "고3/2021/03월/2021학년도-3월-고3-모의고사-수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2021학년도-3월-고3-모의고사-수학-문제.pdf",
+        "page": 10,
+        "question_label": "확률과 통계 25번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S055-P10-F01.png",
+        "crop_sha256": "58b3a30a9e03ef262c67a859bd84e7c8072e5a6e12e79e5995deb41de19d34ef"
+      }
+    },
+    {
+      "id": "mapping_diagram",
+      "title": "집합·대응 화살표",
+      "source_id": "S028-P02-F01",
+      "scope": "두 집합과 각 정의역 원소에서 출발하는 한 개의 대응 화살표",
+      "example": "examples/mapping_diagram.json",
+      "reference_note": "두 집합과 원소별 하나의 대응을 지정한다. 원소 수와 대응 관계가 바뀌어도 화살표가 각 출발점과 도착점에 연결된다.",
+      "example_sha256": "c7b74f7a8c48a1ef7757762ee21a1ef3f572f367364fe5b3cf0904f0091eb0fb",
+      "source": {
+        "source_filename": "2020년-고2-3월-학평서울_4.24-시행-수학-문제.pdf",
+        "source_relative_path": "고2/2020/03월/2020년-고2-3월-학평서울_4.24-시행-수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2020년-고2-3월-학평서울_4.24-시행-수학-문제.pdf",
+        "page": 2,
+        "question_label": "5번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S028-P02-F01.png",
+        "crop_sha256": "9398ead1ab681caf4f989e30c1f0828752edfd1f3dd308f4769011e6316e4843"
+      }
+    },
+    {
+      "id": "prism_section",
+      "title": "각기둥·절단·분리 배치",
+      "source_id": "S020-P08-F01",
+      "scope": "고정 투영의 직육면체를 PFGQ 평면으로 절단한 두 각기둥",
+      "example": "examples/prism_section.json",
+      "reference_note": "고정된 투영에서 같은 절단면을 갖는 두 각기둥을 만든다. 원문의 문자 치수를 추정하지 않으며 임의의 3차원 절단 일반해를 뜻하지 않는다.",
+      "example_sha256": "531b507f45a3b4117291ee4c8e82b69b8fa43ed4430815e16efd334eaad184e5",
+      "source": {
+        "source_filename": "2024_10-고1-수학영역-문제지.pdf",
+        "source_relative_path": "고1/2024/10월/2024_10-고1-수학영역-문제지.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2024_10-고1-수학영역-문제지.pdf",
+        "page": 8,
+        "question_label": "20번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S020-P08-F01.png",
+        "crop_sha256": "84726d683eca2ac33bef0703a3c0b7ae83def7097f709fc56fbe63a79e94be8f"
+      }
+    },
+    {
+      "id": "upright_cylinder_oblique_section",
+      "title": "원기둥·비스듬한 평면 절단",
+      "source_id": "S005-P02-F01",
+      "scope": "수직 원기둥의 측면을 통과하는 기울어진 평면과 진짜 타원 단면",
+      "example": "examples/upright_cylinder_oblique_section.json",
+      "reference_note": "원기둥 앞·뒤 둘레는 S005-P02-F01, 내부 점선은 S078-P19-F01, 평행사변형 평면은 S058-P19-F01에서 참조했다. 동일한 기울어진 절단 그림은 도감에 없으며 원본 교과서 조건으로 구성한다.",
+      "example_sha256": "b5990c93f2e80688f31987385125a5d719755238e9abca1cca23ce0b559af15a",
+      "source": {
+        "source_filename": "2021학년도-3월-고1-모의고사-수학-문제.pdf",
+        "source_relative_path": "고1/2021/03월/2021학년도-3월-고1-모의고사-수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2021학년도-3월-고1-모의고사-수학-문제.pdf",
+        "page": 2,
+        "question_label": "5번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S005-P02-F01.png",
+        "crop_sha256": "297675648408e0d2e4e2b9aebd038463ea0860cdd59c077dc72cc2b76e6a2426"
+      }
+    },
+    {
+      "id": "mapping_chain",
+      "title": "세 집합의 연속 대응",
+      "source_id": "S012-P03-F01",
+      "scope": "세 집합 X→Y→Z에서 두 개의 전체 함수를 별도로 계산",
+      "example": "examples/mapping_chain.json",
+      "reference_note": "S012-P03-F01의 X→Y→X 세 열 배치와 방향 화살표를 참고한다. 원소와 대응 값은 변형의 실제 조건으로 지정한다.",
+      "example_sha256": "d1f11c1d5fdffc15855808a0662637f64c344b676a7847a0f2ed7a1e7f361ef6",
+      "source": {
+        "source_filename": "2022년-11월-고1-모의고사_수학-문제.pdf",
+        "source_relative_path": "고1/2022/11월/2022년-11월-고1-모의고사_수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2022년-11월-고1-모의고사_수학-문제.pdf",
+        "page": 3,
+        "question_label": "9번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S012-P03-F01.png",
+        "crop_sha256": "c433101d2432f6b67e2eb927e726e6c67b9236150c19cf47a8db6bd07848b9bc"
+      }
+    },
+    {
+      "id": "cone_inscribed_cylinder",
+      "title": "원뿔 안의 동축 원기둥",
+      "source_id": "S009-P03-F01",
+      "scope": "원뿔 모선의 닮음으로 내접 원기둥 반지름을 계산한 고정 투영",
+      "example": "examples/cone_inscribed_cylinder.json",
+      "reference_note": "원뿔·원기둥의 윤곽과 점선 뒤쪽 호를 참고한다. 정본 원문의 두 입체는 내접 관계가 아니므로 닮음 관계의 근거는 해당 변형 조건이다.",
+      "example_sha256": "0919cfa5e8cbe7337d3adf8289fc7be01e397bf18d8a84b39a0d1977d9e0d062",
+      "source": {
+        "source_filename": "2022년-고1-3월-모의고사-수학-문제.pdf",
+        "source_relative_path": "고1/2022/03월/2022년-고1-3월-모의고사-수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2022년-고1-3월-모의고사-수학-문제.pdf",
+        "page": 3,
+        "question_label": "8번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S009-P03-F01.png",
+        "crop_sha256": "d7e096335cca1d796af86bfc1dba0260de3cba365f926a0ed7b75e16e4b3bfb6"
+      }
+    },
+    {
+      "id": "venn_regions",
+      "title": "두세 집합의 원자영역",
+      "source_id": "S053-P08-F02",
+      "scope": "고정된 2·3원 Venn에서 지정한 비영 원자영역을 회색으로 채움",
+      "example": "examples/venn_regions.json",
+      "reference_note": "정본에는 동일한 Venn 사례가 없다. S053-P08-F02는 회색 면적 스타일의 부분 근거만 제공한다. 집합 관계와 음영 마스크는 원본 교과서·변형 조건으로 결정한다.",
+      "example_sha256": "7b7596e9cbe47496c18ec4df7a62cd514ef4aa8db6d1b3d14a6727327fe05e7a",
+      "source": {
+        "source_filename": "2026년-6월-고2-모의고사-수학-문제.pdf",
+        "source_relative_path": "고2/2026/06월/2026년-6월-고2-모의고사-수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2026년-6월-고2-모의고사-수학-문제.pdf",
+        "page": 8,
+        "question_label": "20번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S053-P08-F02.png",
+        "crop_sha256": "0c58c3d31db65223d0e307d38aa85751e265501b8dee4bca49fe429c60428a81"
+      }
+    },
+    {
+      "id": "stacked_cubes",
+      "title": "정육면체 층쌓기",
+      "source_id": "S017-P05-F01",
+      "scope": "정사각·삼각 층의 반복 정육면체를 고정 투영하고 가려진 모서리 제거",
+      "example": "examples/stacked_cubes.json",
+      "reference_note": "S017-P05-F01은 단일 정육면체의 면·모서리 표현 근거다. 층쌓기 자체의 동일 도감 예시는 없으며 배열 수열은 원본 교과서와 입력으로 정한다.",
+      "example_sha256": "e794855ea4c32236a3e2cb5ab8854b78ff156f3a5e92e6f665ad4bded6405741",
+      "source": {
+        "source_filename": "2024년-고1-3월-모의고사-수학-문제.pdf",
+        "source_relative_path": "고1/2024/03월/2024년-고1-3월-모의고사-수학-문제.pdf",
+        "source_url": "https://horaeng.com/wp-content/uploads/2024년-고1-3월-모의고사-수학-문제.pdf",
+        "page": 5,
+        "question_label": "13번",
+        "question_link_status": "position_inferred",
+        "crop_path": "crops/S017-P05-F01.png",
+        "crop_sha256": "63a830cec10ccb35d0b0054b86be33a23cb1db751ba812a6e88d1b1530f241e4"
+      }
+    }
+  ]
+}

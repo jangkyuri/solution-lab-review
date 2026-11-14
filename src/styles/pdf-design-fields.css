@@ -1,0 +1,6 @@
+.pdf-design-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18ch), 1fr));
+  gap: var(--space-3);
+  min-width: 0;
+}

@@ -1,0 +1,36 @@
+[project]
+name = "solution-lab-math"
+version = "0.1.0"
+description = "Bounded symbolic checking and print graph rendering for Solution Lab"
+requires-python = ">=3.13"
+dependencies = ["pydantic>=2.12,<3", "sympy>=1.14,<2", "matplotlib>=3.10,<4"]
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.14", "basedpyright>=1.32"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["-ra", "--strict-config", "--strict-markers"]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+extend-exclude = [".uv-cache", ".tools", ".mpl-cache", ".qa"]
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = ["COM812", "ISC001", "D203", "D213", "CPY001", "FBT001", "FBT002"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = ["S101", "D", "PLR2004", "ARG", "SLF001", "INP001"]
+# Rendering imports are deliberately lazy so check/sample do not import Matplotlib.
+"render.py" = ["PLC0415"]
+# These narrow stubs mirror the upstream public keyword and singleton names.
+"typings/matplotlib/*.pyi" = ["A002", "N816"]
+
+[tool.basedpyright]
+typeCheckingMode = "all"
+pythonVersion = "3.13"
+include = ["."]
+exclude = [".venv", ".tools", ".uv-cache", ".mpl-cache", ".qa", "__pycache__"]
+

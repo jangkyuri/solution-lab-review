@@ -1,0 +1,87 @@
+{
+  "view": [
+    -0.8,
+    3,
+    -1,
+    5.2
+  ],
+  "axes": [
+    "x",
+    "y"
+  ],
+  "points": {
+    "O": [
+      0,
+      0
+    ],
+    "A": [
+      2,
+      0
+    ],
+    "B": [
+      0,
+      4
+    ]
+  },
+  "curves": [
+    {
+      "id": "curve_02",
+      "coefficients": [
+        4,
+        -2,
+        0
+      ],
+      "plot_domain": [
+        -0.25,
+        2.25
+      ],
+      "fill_domain": [
+        0,
+        2
+      ]
+    }
+  ],
+  "segments": [],
+  "equal_marks": [],
+  "right_angles": [],
+  "angle_marks": [],
+  "visible_annotations": [
+    {
+      "id": "02_label_O",
+      "text": "$O$",
+      "target": "O",
+      "preferred_direction": "SW"
+    },
+    {
+      "id": "02_label_A",
+      "text": "$A$",
+      "target": "A",
+      "preferred_direction": "S"
+    },
+    {
+      "id": "02_label_B",
+      "text": "$B$",
+      "target": "B",
+      "preferred_direction": "W"
+    },
+    {
+      "id": "02_equation",
+      "text": "$y=-2x+4$",
+      "target": "curve_02",
+      "preferred_direction": "NE"
+    },
+    {
+      "id": "02_axis_x",
+      "text": "$x$",
+      "target": "axis_x",
+      "preferred_direction": "E"
+    },
+    {
+      "id": "02_axis_y",
+      "text": "$y$",
+      "target": "axis_y",
+      "preferred_direction": "N"
+    }
+  ],
+  "schema_version": "figure_recipe_v1"
+}

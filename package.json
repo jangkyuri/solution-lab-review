@@ -1,0 +1,42 @@
+{
+  "name": "solution-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=.env.local --use-env-proxy server/index.ts",
+    "build": "tsc --noEmit && vite build",
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "start": "node --env-file=.env.local --use-env-proxy server/index.ts"
+  },
+  "dependencies": {
+    "@astryxdesign/core": "0.7.11",
+    "@astryxdesign/theme-stone": "0.7.11",
+    "@hono/node-server": "latest",
+    "@stylexjs/stylex": "0.19.1",
+    "hono": "latest",
+    "jsxgraph": "^1.14.2",
+    "katex": "latest",
+    "ky": "latest",
+    "lucide-react": "latest",
+    "mathjs": "latest",
+    "openai": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@types/katex": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "latest",
+    "react-doctor": "latest",
+    "react-grab": "latest",
+    "react-scan": "latest",
+    "typescript": "latest",
+    "vite": "latest",
+    "vitest": "latest"
+  }
+}

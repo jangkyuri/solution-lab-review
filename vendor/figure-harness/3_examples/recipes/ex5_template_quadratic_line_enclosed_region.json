@@ -1,0 +1,46 @@
+{
+  "schema_version": "figure_recipe_v1",
+  "template": {
+    "id": "quadratic_line_enclosed_region",
+    "parameters": {
+      "intersection_x": [-1, 2],
+      "quadratic_scale": 1,
+      "line_slope": 1,
+      "line_intercept": 1,
+      "plot_domain": [-1.75, 2.75],
+      "shade_region": true
+    }
+  },
+  "visible_annotations": [
+    {
+      "id": "label_axis_x",
+      "target": "axis_x",
+      "text": "$x$",
+      "preferred_direction": "E"
+    },
+    {
+      "id": "label_axis_y",
+      "target": "axis_y",
+      "text": "$y$",
+      "preferred_direction": "N"
+    },
+    {
+      "id": "label_O",
+      "target": "O",
+      "text": "$O$",
+      "preferred_direction": "SW"
+    },
+    {
+      "id": "label_quadratic",
+      "target": "quadratic",
+      "text": "$y=x^2-1$",
+      "preferred_direction": "NW"
+    },
+    {
+      "id": "label_line",
+      "target": "line",
+      "text": "$y=x+1$",
+      "preferred_direction": "NE"
+    }
+  ]
+}

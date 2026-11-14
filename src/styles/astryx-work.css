@@ -1,0 +1,8 @@
+.astryx-result-tabs { margin-bottom: var(--space-8); }
+.astryx-job-tabs [role="tab"], .astryx-job-action { min-height: var(--control-height); }
+.empty-state > .astryx-job-action { margin-top: var(--space-2); }
+.empty-state .astryx-job-action svg { color: inherit; }
+
+@media (max-width: 759px) {
+  .astryx-job-tabs [role="tab"], .astryx-job-action { min-height: var(--touch-height); }
+}

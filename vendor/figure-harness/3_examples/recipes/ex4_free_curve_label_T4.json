@@ -1,0 +1,77 @@
+{
+  "view": [
+    -0.75,
+    5,
+    -1.5,
+    5
+  ],
+  "axes": [
+    "x",
+    "y"
+  ],
+  "points": {
+    "O": [
+      0,
+      0
+    ],
+    "A": [
+      4,
+      0
+    ]
+  },
+  "curves": [
+    {
+      "id": "curve_01",
+      "coefficients": [
+        0,
+        4,
+        -1
+      ],
+      "plot_domain": [
+        -0.25,
+        4.25
+      ],
+      "fill_domain": [
+        0,
+        4
+      ]
+    }
+  ],
+  "segments": [],
+  "equal_marks": [],
+  "right_angles": [],
+  "angle_marks": [],
+  "visible_annotations": [
+    {
+      "id": "01_label_O",
+      "text": "$O$",
+      "target": "O",
+      "preferred_direction": "SW"
+    },
+    {
+      "id": "01_label_A",
+      "text": "$A$",
+      "target": "A",
+      "preferred_direction": "NE"
+    },
+    {
+      "id": "01_equation",
+      "text": "$v_P(t)=t^{2}-4t$",
+      "target": "curve_01",
+      "preferred_direction": "NE"
+    },
+    {
+      "id": "01_axis_x",
+      "text": "$x$",
+      "target": "axis_x",
+      "preferred_direction": "E"
+    },
+    {
+      "id": "01_axis_y",
+      "text": "$y$",
+      "target": "axis_y",
+      "preferred_direction": "N"
+    }
+  ],
+  "schema_version": "figure_recipe_v1"
+}

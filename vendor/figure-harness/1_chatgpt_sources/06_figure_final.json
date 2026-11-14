@@ -1,0 +1,580 @@
+{
+  "schema_version": "exam_solution_v1",
+  "packet_type": "final",
+  "run_id": "synthetic_authoring_figure_20260920",
+  "batch_seq": 1,
+  "parent_checkpoint_sha256": null,
+  "source": {
+    "filename": "figure_recipe_source.pdf",
+    "sha256": "65ff3e68c469708e03fc072316ea07b464d66dcbc0e41c62674f1859a763db8d",
+    "page_count": 1
+  },
+  "exam": {
+    "title": "도형·그래프 예시 해설",
+    "subject": "수학",
+    "curriculum": null
+  },
+  "scope": {
+    "mode": "full_document",
+    "detected_question_ids": [
+      "q001",
+      "q002",
+      "q003"
+    ],
+    "selected_question_ids": [
+      "q001",
+      "q002",
+      "q003"
+    ],
+    "excluded_question_ids": [],
+    "selection_note": null
+  },
+  "inventory": [
+    {
+      "question_id": "q001",
+      "order": 1,
+      "source_label": "1번",
+      "display_label": "1번",
+      "kind": "short",
+      "source_pages": [
+        1
+      ],
+      "subquestion_ids": [],
+      "choice_count": null
+    },
+    {
+      "question_id": "q002",
+      "order": 2,
+      "source_label": "2번",
+      "display_label": "2번",
+      "kind": "short",
+      "source_pages": [
+        1
+      ],
+      "subquestion_ids": [],
+      "choice_count": null
+    },
+    {
+      "question_id": "q003",
+      "order": 3,
+      "source_label": "3번",
+      "display_label": "3번",
+      "kind": "short",
+      "source_pages": [
+        1
+      ],
+      "subquestion_ids": [],
+      "choice_count": null
+    }
+  ],
+  "solutions": [
+    {
+      "question_id": "q001",
+      "revision": 1,
+      "status": "verified",
+      "correction_reason": null,
+      "answer": {
+        "choice_index": null,
+        "parts": [
+          {
+            "part_id": "main",
+            "content": [
+              {
+                "type": "math",
+                "value": "4"
+              }
+            ]
+          }
+        ]
+      },
+      "key": [
+        {
+          "type": "text",
+          "value": "함수식에 주어진 값을 대입한다."
+        }
+      ],
+      "steps": [
+        {
+          "type": "figure",
+          "asset_id": "fig_001",
+          "caption": "이차함수 그래프"
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "value": "그래프에서 "
+            },
+            {
+              "type": "math",
+              "value": "x=2"
+            },
+            {
+              "type": "text",
+              "value": "에 대응하는 높이를 구한다."
+            }
+          ]
+        },
+        {
+          "type": "display_math",
+          "value": "2(4-2)=4"
+        }
+      ],
+      "verification": {
+        "method": "Synthetic format fixture",
+        "result": "Example data only",
+        "source_check": "Synthetic source",
+        "curriculum_check": "Not assessed"
+      },
+      "issues": []
+    },
+    {
+      "question_id": "q002",
+      "revision": 1,
+      "status": "verified",
+      "correction_reason": null,
+      "answer": {
+        "choice_index": null,
+        "parts": [
+          {
+            "part_id": "main",
+            "content": [
+              {
+                "type": "math",
+                "value": "2"
+              }
+            ]
+          }
+        ]
+      },
+      "key": [
+        {
+          "type": "math",
+          "value": "x"
+        },
+        {
+          "type": "text",
+          "value": "축과 만나는 점에서는 "
+        },
+        {
+          "type": "math",
+          "value": "y"
+        },
+        {
+          "type": "text",
+          "value": "의 값이 "
+        },
+        {
+          "type": "math",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "이다."
+        }
+      ],
+      "steps": [
+        {
+          "type": "figure",
+          "asset_id": "fig_002",
+          "caption": "직선 그래프"
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "value": "직선이 "
+            },
+            {
+              "type": "math",
+              "value": "x"
+            },
+            {
+              "type": "text",
+              "value": "축과 만나는 점에서는 "
+            },
+            {
+              "type": "math",
+              "value": "y=0"
+            },
+            {
+              "type": "text",
+              "value": "이다. 이 관계를 함수식에 적용한다."
+            }
+          ]
+        },
+        {
+          "type": "display_math",
+          "value": "-2x+4=0\\implies x=2"
+        }
+      ],
+      "verification": {
+        "method": "Synthetic format fixture",
+        "result": "Example data only",
+        "source_check": "Synthetic source",
+        "curriculum_check": "Not assessed"
+      },
+      "issues": []
+    },
+    {
+      "question_id": "q003",
+      "revision": 1,
+      "status": "verified",
+      "correction_reason": null,
+      "answer": {
+        "choice_index": null,
+        "parts": [
+          {
+            "part_id": "main",
+            "content": [
+              {
+                "type": "math",
+                "value": "70^\\circ"
+              }
+            ]
+          }
+        ]
+      },
+      "key": [
+        {
+          "type": "text",
+          "value": "이등변삼각형의 두 밑각은 같다."
+        }
+      ],
+      "steps": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "value": "이등변삼각형의 두 밑각은 같고 세 내각의 합은 "
+            },
+            {
+              "type": "math",
+              "value": "180^\\circ"
+            },
+            {
+              "type": "text",
+              "value": "이다. 그림에서 주어진 꼭짓점의 각을 확인한다."
+            }
+          ]
+        },
+        {
+          "type": "figure",
+          "asset_id": "fig_003",
+          "caption": "이등변삼각형"
+        },
+        {
+          "type": "display_math",
+          "value": "\\angle\\mathrm{ABC}=\\frac{180^\\circ-40^\\circ}{2}=70^\\circ"
+        }
+      ],
+      "verification": {
+        "method": "Synthetic format fixture",
+        "result": "Example data only",
+        "source_check": "Synthetic source",
+        "curriculum_check": "Not assessed"
+      },
+      "issues": []
+    }
+  ],
+  "assets": [
+    {
+      "asset_id": "fig_001",
+      "construction": {
+        "view": [
+          -0.75,
+          5,
+          -1.5,
+          5
+        ],
+        "axes": [
+          "x",
+          "y"
+        ],
+        "points": {
+          "O": [
+            0,
+            0
+          ],
+          "A": [
+            4,
+            0
+          ]
+        },
+        "curves": [
+          {
+            "id": "curve_01",
+            "coefficients": [
+              0,
+              4,
+              -1
+            ],
+            "plot_domain": [
+              -0.25,
+              4.25
+            ],
+            "fill_domain": [
+              0,
+              4
+            ]
+          }
+        ],
+        "segments": [],
+        "equal_marks": [],
+        "right_angles": [],
+        "angle_marks": [],
+        "visible_annotations": [
+          {
+            "id": "01_label_O",
+            "text": "$O$",
+            "target": "O",
+            "preferred_direction": "SW"
+          },
+          {
+            "id": "01_label_A",
+            "text": "$A$",
+            "target": "A",
+            "preferred_direction": "NE"
+          },
+          {
+            "id": "01_equation",
+            "text": "$y=x(4-x)$",
+            "target": "curve_01",
+            "preferred_direction": "NE"
+          },
+          {
+            "id": "01_axis_x",
+            "text": "$x$",
+            "target": "axis_x",
+            "preferred_direction": "E"
+          },
+          {
+            "id": "01_axis_y",
+            "text": "$y$",
+            "target": "axis_y",
+            "preferred_direction": "N"
+          }
+        ],
+        "schema_version": "figure_recipe_v1",
+        "point_markers": {},
+        "label_placement": "anchored"
+      },
+      "source_pages": [
+        1
+      ],
+      "description": "이차함수 그래프"
+    },
+    {
+      "asset_id": "fig_002",
+      "construction": {
+        "view": [
+          -0.8,
+          3,
+          -1,
+          5.2
+        ],
+        "axes": [
+          "x",
+          "y"
+        ],
+        "points": {
+          "O": [
+            0,
+            0
+          ],
+          "A": [
+            2,
+            0
+          ],
+          "B": [
+            0,
+            4
+          ]
+        },
+        "curves": [
+          {
+            "id": "curve_02",
+            "coefficients": [
+              4,
+              -2,
+              0
+            ],
+            "plot_domain": [
+              -0.25,
+              2.25
+            ],
+            "fill_domain": [
+              0,
+              2
+            ]
+          }
+        ],
+        "segments": [],
+        "equal_marks": [],
+        "right_angles": [],
+        "angle_marks": [],
+        "visible_annotations": [
+          {
+            "id": "02_label_O",
+            "text": "$O$",
+            "target": "O",
+            "preferred_direction": "SW"
+          },
+          {
+            "id": "02_label_A",
+            "text": "$A$",
+            "target": "A",
+            "preferred_direction": "S"
+          },
+          {
+            "id": "02_label_B",
+            "text": "$B$",
+            "target": "B",
+            "preferred_direction": "W"
+          },
+          {
+            "id": "02_equation",
+            "text": "$y=-2x+4$",
+            "target": "curve_02",
+            "preferred_direction": "NE"
+          },
+          {
+            "id": "02_axis_x",
+            "text": "$x$",
+            "target": "axis_x",
+            "preferred_direction": "E"
+          },
+          {
+            "id": "02_axis_y",
+            "text": "$y$",
+            "target": "axis_y",
+            "preferred_direction": "N"
+          }
+        ],
+        "schema_version": "figure_recipe_v1",
+        "point_markers": {},
+        "label_placement": "anchored"
+      },
+      "source_pages": [
+        1
+      ],
+      "description": "직선 그래프"
+    },
+    {
+      "asset_id": "fig_003",
+      "construction": {
+        "view": [
+          -3.25,
+          0.5,
+          -1.6,
+          1.6
+        ],
+        "axes": [],
+        "points": {
+          "A": [
+            -2.7474774194546225,
+            0
+          ],
+          "B": [
+            0,
+            -1
+          ],
+          "C": [
+            0,
+            1
+          ],
+          "D": [
+            0,
+            0
+          ]
+        },
+        "curves": [],
+        "segments": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "A",
+            "C"
+          ],
+          [
+            "B",
+            "C"
+          ],
+          [
+            "A",
+            "D"
+          ]
+        ],
+        "equal_marks": [
+          [
+            "A",
+            "B"
+          ],
+          [
+            "A",
+            "C"
+          ]
+        ],
+        "right_angles": [
+          {
+            "vertex": "D",
+            "ray1": "C",
+            "ray2": "A"
+          }
+        ],
+        "angle_marks": [
+          {
+            "id": "angle_BAC",
+            "vertex": "A",
+            "ray1": "B",
+            "ray2": "C"
+          }
+        ],
+        "visible_annotations": [
+          {
+            "id": "03_label_A",
+            "text": "$A$",
+            "target": "A",
+            "preferred_direction": "W"
+          },
+          {
+            "id": "03_label_B",
+            "text": "$B$",
+            "target": "B",
+            "preferred_direction": "SE"
+          },
+          {
+            "id": "03_label_C",
+            "text": "$C$",
+            "target": "C",
+            "preferred_direction": "NE"
+          },
+          {
+            "id": "03_label_D",
+            "text": "$D$",
+            "target": "D",
+            "preferred_direction": "E"
+          },
+          {
+            "id": "03_angle_value",
+            "text": "$40^\\circ$",
+            "target": "angle_BAC",
+            "preferred_direction": "E"
+          }
+        ],
+        "schema_version": "figure_recipe_v1",
+        "point_markers": {},
+        "label_placement": "anchored"
+      },
+      "source_pages": [
+        1
+      ],
+      "description": "이등변삼각형"
+    }
+  ]
+}

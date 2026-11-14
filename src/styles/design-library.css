@@ -1,0 +1,86 @@
+.design-library .view-heading p, .design-reference-detail { word-break: keep-all; overflow-wrap: anywhere; }
+.design-library > .notice { margin-block: var(--space-4); }
+.design-default-status { margin-bottom: var(--space-4); color: var(--secondary); word-break: keep-all; overflow-wrap: anywhere; }
+.design-library-layout {
+  display: grid;
+  grid-template-columns: minmax(28ch, .5fr) minmax(0, 1.5fr);
+  align-items: stretch;
+  border: var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  min-width: 0;
+}
+.design-reference-list { min-height: 0; overflow-wrap: anywhere; }
+.design-reference-detail { min-width: 0; padding: var(--space-6); }
+.design-reference-header, .design-reference-analysis-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+.design-reference-header h3 { font-size: var(--text-section); }
+.design-reference-default {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  border: var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.design-reference-source { margin-top: var(--space-3); }
+.design-reference-source details { margin-top: var(--space-2); }
+.design-reference-source summary {
+  min-height: var(--control-height);
+  padding-block: var(--space-2);
+  color: var(--blue);
+  cursor: pointer;
+}
+.design-reference-source img {
+  display: block;
+  width: auto;
+  max-height: 60dvh;
+  margin-top: var(--space-2);
+  object-fit: contain;
+}
+.design-reference-fields {
+  display: grid;
+  gap: var(--space-5);
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  margin: var(--space-5) 0 0;
+}
+.design-reference-fields input[type="file"] { padding-inline: var(--space-2); }
+.design-reference-settings {
+  display: grid;
+  gap: var(--space-3);
+  padding-block: var(--space-4);
+  border-block: var(--line);
+}
+.design-reference-checkbox { display: flex; align-items: center; gap: var(--space-2); min-height: var(--control-height); }
+.design-reference-checkbox input { accent-color: var(--blue); }
+.design-reference-analysis, .design-reference-suggestion { display: grid; gap: var(--space-3); }
+.design-reference-analysis {
+  margin-block: var(--space-5);
+  padding: var(--space-4);
+  border: var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+.design-reference-analysis-header p { margin-top: var(--space-1); }
+.design-reference-suggestion { padding-top: var(--space-3); border-top: var(--line); }
+.design-reference-suggestion > .button { justify-self: start; }
+.design-reference-note { white-space: pre-wrap; line-height: var(--line-body); }
+
+@media (max-width: 1099px) {
+  .design-library-layout { grid-template-columns: minmax(0, 1fr); }
+  .design-reference-list { max-block-size: 36dvh; overflow-y: auto; }
+}
+@media (max-width: 439px) {
+  .design-reference-detail { padding: var(--space-4); }
+}

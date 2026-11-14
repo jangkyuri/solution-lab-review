@@ -1,0 +1,104 @@
+{
+  "view": [
+    -1.6,
+    1.6,
+    -0.5,
+    3.25
+  ],
+  "axes": [],
+  "points": {
+    "A": [
+      0,
+      2.7474774194546225
+    ],
+    "B": [
+      -1,
+      0
+    ],
+    "C": [
+      1,
+      0
+    ],
+    "D": [
+      0,
+      0
+    ]
+  },
+  "curves": [],
+  "segments": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "A",
+      "C"
+    ],
+    [
+      "B",
+      "C"
+    ],
+    [
+      "A",
+      "D"
+    ]
+  ],
+  "equal_marks": [
+    [
+      "A",
+      "B"
+    ],
+    [
+      "A",
+      "C"
+    ]
+  ],
+  "right_angles": [
+    {
+      "vertex": "D",
+      "ray1": "C",
+      "ray2": "A"
+    }
+  ],
+  "angle_marks": [
+    {
+      "id": "angle_BAC",
+      "vertex": "A",
+      "ray1": "B",
+      "ray2": "C"
+    }
+  ],
+  "visible_annotations": [
+    {
+      "id": "03_label_A",
+      "text": "$A$",
+      "target": "A",
+      "preferred_direction": "N"
+    },
+    {
+      "id": "03_label_B",
+      "text": "$B$",
+      "target": "B",
+      "preferred_direction": "SW"
+    },
+    {
+      "id": "03_label_C",
+      "text": "$C$",
+      "target": "C",
+      "preferred_direction": "SE"
+    },
+    {
+      "id": "03_label_D",
+      "text": "$D$",
+      "target": "D",
+      "preferred_direction": "S"
+    },
+    {
+      "id": "03_angle_value",
+      "text": "$40^\\circ$",
+      "target": "angle_BAC",
+      "preferred_direction": "S"
+    }
+  ],
+  "schema_version": "figure_recipe_v1"
+}

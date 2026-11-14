@@ -1,0 +1,16 @@
+.env*
+.key-setup/
+node_modules/
+dist/
+data/
+.logs/
+.qa/
+python/.venv/
+python/.uv-cache/
+python/.mpl-cache/
+python/.tools/
+**/__pycache__/
+**/.pytest_cache/
+.ruff_cache/
+*.sqlite*
+*.pdf
