@@ -49,24 +49,24 @@ export function sourcePanelsTex(upper: string, lower: string): string {
   return String.raw`\baeksinsourcepanels{${upper}}{${lower}}`;
 }
 
-export function mappedSourcePanelsTex(original: OriginalProblem, asset: PdfAsset): string | undefined {
+export function mappedSourcePanelsTex(original: OriginalProblem, asset: PdfAsset, heightBp = 265): string | undefined {
   const split = asset.mappedSourceSplits?.get(original.questionNumber);
   if (!split) return undefined;
   const [left, bottom, right, top] = original.trim;
-  const width = Math.min(original.widthBp, 265 * split.ratio).toFixed(2);
+  const width = Math.min(original.widthBp, heightBp * split.ratio).toFixed(2);
   const panel = (lower: number, upper: number) => String.raw`\includegraphics[page=${original.page},pagebox=cropbox,trim=${left}bp ${lower}bp ${right}bp ${upper}bp,clip,width=\dimexpr\ifdim${width}bp>\linewidth\linewidth\else${width}bp\fi\relax]{${asset.localName}}`;
   return sourcePanelsTex(panel(split.pageHeight - split.seam, top), panel(bottom, split.seam));
 }
 
 /** Only a single-question source and a single combined raster establish an image-to-question pairing. */
-export function stackedSourceTex(job: Job, assets: readonly PdfAsset[], finalReference = false): string | null {
+export function stackedSourceTex(job: Job, assets: readonly PdfAsset[], finalReference = false, heightBp = 265): string | null {
   if (!isSingleQuestionSource(job) || assets.length !== 1 || job.originalProblems?.length) return null;
   const [asset] = assets;
   if (!asset?.mimeType.startsWith('image/')) return null;
   if (job.mode === 'supplement' && asset.role !== 'exam_and_handwriting') return null;
   if (asset.sourcePanels) {
     const [upperName, lowerName] = asset.sourcePanels;
-    const width = asset.sourcePanelMaxWidthBp?.toFixed(2) ?? '265';
+    const width = ((asset.sourcePanelRatio ?? 1) * heightBp).toFixed(2);
     const panel = (name: string) => String.raw`\includegraphics[width=\dimexpr\ifdim${width}bp>\linewidth\linewidth\else${width}bp\fi\relax]{${name}}`;
     return sourcePanelsTex(panel(upperName), panel(lowerName));
   }

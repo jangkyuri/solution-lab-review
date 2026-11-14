@@ -16,8 +16,8 @@ export const SPLIT_SUPPLEMENT_PREAMBLE = String.raw`
 \newcommand{\baeksinsplitgraphic}[2]{%
   \par\noindent\makebox[\linewidth][c]{\baeksinsplitfit{#1}{#2}}\par}
 \newcommand{\baeksinsplitside}[2]{%
-  \par\noindent\begin{minipage}[t]{.56\linewidth}\vspace{0pt}\raggedright #1\end{minipage}\hfill%
-  \begin{minipage}[t]{.42\linewidth}\vspace{0pt}#2\end{minipage}\par}
+  \par\noindent\begin{minipage}[t]{.63\linewidth}\vspace{0pt}\raggedright #1\end{minipage}\hfill%
+  \begin{minipage}[t]{.35\linewidth}\vspace{0pt}#2\end{minipage}\par}
 \ExplSyntaxOn
 \int_new:N \l__baeksin_split_stage_int
 \int_new:N \l__baeksin_split_after_int
@@ -132,7 +132,7 @@ export function splitSupplementTex({ question, questionIndex, graphs, referenceT
     const proseLength = step.explanation.length;
     const smallFigure = step.booklet?.figure === 'small';
     const sideFigure = dense && proseLength >= 75 && proseLength <= 160 && !zoomPath && !step.booklet?.table;
-    const figureHeight = sideFigure ? 76 : smallFigure ? 80 : dense ? 110 : figureCount >= 3 ? 114 : 137;
+    const figureHeight = sideFigure ? 76 : smallFigure ? 80 : dense ? 125 : figureCount >= 3 ? 114 : 137;
     const stage = renderBookletStep({ step, graphPath, zoomPath, stageNumber: index + 1, splitColumn: { figureHeight, sideFigure } }, '', question.problemText);
     return String.raw`\baeksinsplitstage{${stage}}`;
   });

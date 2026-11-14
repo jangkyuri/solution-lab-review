@@ -19,7 +19,7 @@ export type PdfAsset = {
   readonly role: 'exam' | 'handwriting' | 'exam_and_handwriting';
   readonly imageSize?: { readonly width: number; readonly height: number };
   readonly sourcePanels?: readonly [string, string];
-  readonly sourcePanelMaxWidthBp?: number;
+  readonly sourcePanelRatio?: number;
   readonly mappedSourceSplits?: ReadonlyMap<string, { readonly pageHeight: number; readonly seam: number; readonly ratio: number }>;
 };
 

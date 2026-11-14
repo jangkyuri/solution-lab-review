@@ -20,6 +20,10 @@ function studentQuestionMarker(number: string): string {
   return escapeTex(studentQuestionNumber(number));
 }
 
+function sourceHeight(question: Question | undefined, finalReference: boolean): number {
+  return finalReference && (question?.steps.filter(step => step.figureRecipe || step.graph).length ?? 0) >= 4 ? 252 : 265;
+}
+
 export function baeksinBookletPreamble(title: string, side: number, top: number, bottom: number, mode: Job['mode'] = 'supplement', stacked = false): string {
   return String.raw`
 \newcommand{\baeksinlabel}[1]{{\labeltext\color{muted}\fontsize{8bp}{10bp}\selectfont #1}}
@@ -154,11 +158,11 @@ export function renderBaeksinBooklet(job: Job, assets: readonly PdfAsset[], grap
   const sourceMacro = finalReference ? 'baeksinfinalsource' : 'baeksinstackedsource';
   const referenceEnvironment = finalReference ? 'baeksinfinalreference' : 'baeksinhandreference';
   const referenceTitle = job.mode === 'supplement' ? '손풀이 참고' : '풀이';
-  const pairedSource = stacked ? stackedSourceTex(job, sourceAssets, finalReference) : null;
+  const pairedSource = stacked ? stackedSourceTex(job, sourceAssets, finalReference, sourceHeight(questions[0], finalReference)) : null;
   const fullWidthQuestions = handSolution && stacked && (!single || Boolean(job.originalProblems?.length) || (finalReference && !pairedSource));
   const usedAssets = new Set<PdfAsset>();
   const body = pairedSource || fullWidthQuestions ? [] : sourcePages(sourceAssets, job.mode, single ? questions[0]?.number : undefined);
-  const useCompactSupplement = finalReference && job.pdfDesign?.stepLayout !== 'separate'
+  const useCompactSupplement = finalReference && job.pdfDesign?.fontSize === 11 && job.pdfDesign.stepLayout !== 'separate'
     && sourceAssets.some(asset => asset.sourcePanels || asset.mappedSourceSplits?.size);
   if (useCompactSupplement) body.unshift(SPLIT_SUPPLEMENT_PREAMBLE);
   for (const [questionIndex, question] of questions.entries()) {
@@ -170,7 +174,7 @@ export function renderBaeksinBooklet(job: Job, assets: readonly PdfAsset[], grap
     const original = originalProblemTex(job, question.number, assets, stackedHeight);
     const sourceMapping = job.originalProblems?.find(item => item.questionNumber === question.number);
     const mappedAsset = sourceMapping && sourceAssets.find(asset => asset.sourceFileIds.includes(sourceMapping.fileId));
-    const mappedPanels = sourceMapping && mappedAsset && mappedSourcePanelsTex(sourceMapping, mappedAsset);
+    const mappedPanels = sourceMapping && mappedAsset && mappedSourcePanelsTex(sourceMapping, mappedAsset, sourceHeight(question, finalReference));
     if (fullWidthQuestions) {
       if (mappedAsset) usedAssets.add(mappedAsset);
       const handwritten = job.mode === 'supplement' && mappedAsset?.role !== 'exam_and_handwriting'

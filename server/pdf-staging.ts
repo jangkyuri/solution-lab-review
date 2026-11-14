@@ -67,7 +67,7 @@ export async function prepareSourcePanels(assets: readonly PdfAsset[], originals
       const [upper, lower] = sourcePanels;
       const split = await findSourceImageSplit(path.join(stage, asset.localName), [0, 0, 0, 0], stage,
         [path.join(stage, upper), path.join(stage, lower)]);
-      return split ? { ...asset, sourcePanels, sourcePanelMaxWidthBp: 265 * split.width / Math.max(split.y, split.height - split.y) } : asset;
+      return split ? { ...asset, sourcePanels, sourcePanelRatio: split.width / Math.max(split.y, split.height - split.y) } : asset;
     }
     if (asset.mimeType !== 'application/pdf') return asset;
     const mappedSourceSplits = new Map<string, { pageHeight: number; seam: number; ratio: number }>();
